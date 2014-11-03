@@ -1,0 +1,17 @@
+@import "susy";
+@import "breakpoint";
+
+//@include border-box-sizing;
+
+$susy: (
+  columns: 20,
+  gutters: 1/4,
+  output: float,
+  container-position: center,
+  gutter-position: inside,
+  global-box-sizing: border-box,
+  use-custom: (rem: true),
+
+);
+
+

@@ -1,0 +1,88 @@
+@function unpack($shorthand) {
+  @if length($shorthand) == 1 {
+    @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
+  }
+  @else if length($shorthand) == 2 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 1) nth($shorthand, 2);
+  }
+  @else if length($shorthand) == 3 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 3) nth($shorthand, 2);
+  }
+  @else {
+    @return $shorthand;
+  }
+}
+
+@mixin size($size) {
+  $height: nth($size, 1);
+  $width: $height;
+
+  @if length($size) > 1 {
+    $height: nth($size, 2);
+  }
+
+  @if $height == auto or (type-of($height) == number and not unitless($height)) {
+    height: $height;
+  }
+
+  @if $width == auto or (type-of($width) == number and not unitless($width)) {
+    width: $width;
+  }
+}
+
+@mixin position ($position: relative, $coordinates: null null null null) {
+
+  @if type-of($position) == list {
+    $coordinates: $position;
+    $position: relative;
+  }
+
+  $coordinates: unpack($coordinates);
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  position: $position;
+
+  @if ($top and $top == auto) or (type-of($top) == number) {
+    top: $top;
+  }
+
+  @if ($right and $right == auto) or (type-of($right) == number) {
+    right: $right;
+  }
+
+  @if ($bottom and $bottom == auto) or (type-of($bottom) == number) {
+    bottom: $bottom;
+  }
+
+  @if ($left and $left == auto) or (type-of($left) == number) {
+    left: $left;
+  }
+}
+
+//https://github.com/Gaya/Retina-Sprites-for-Compass
+//first we'll define the folders where the sprites are and their layouts
+$icons: sprite-map("sprite/img/*.png", $layout: smart);
+$icons-2x: sprite-map("sprite/retina-img/*.png", $layout: smart);
+
+//Sprite mixin, works perfectly with standard defines
+@mixin use-sprite($sprite) {
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, $sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  height: image-height(sprite-file($icons, $sprite));
+  width: image-width(sprite-file($icons, $sprite));
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: sprite-url($icons-2x);
+    background-size: (image-width(sprite-path($icons-2x)) / 2) (image-height(sprite-path($icons-2x)) / 2);
+    background-position: round(nth(sprite-position($icons-2x, $sprite), 1) / 2) round(nth(sprite-position($icons-2x, $sprite), 2) / 2);
+    height: image-height(sprite-file($icons-2x, $sprite)) / 2;
+    width: image-width(sprite-file($icons-2x, $sprite)) / 2;
+  }
+}

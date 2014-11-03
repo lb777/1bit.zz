@@ -1,0 +1,266 @@
+%buttonDelete
+  +size(20px)
+  +use-sprite(delete)
+  cursor: pointer
+
+%formSection
+  @extend %margin-left-right
+  position: relative
+  display: none
+  +margin-trailer(2)
+
+%wrapSelect
+  +use-sprite(select)
+  overflow: hidden
+  cursor: pointer
+  +size(145px 22px)
+
+%select
+  -webkit-appearance: none
+  outline: none
+  cursor: pointer
+  background: none
+  +size(145px 22px)
+  border: none
+
+.helpForm
+  font-style: italic
+  color: $color-fonts-help
+  +adjust-font-size-to(12px)
+
+.menu
+  display: none
+
+.chooseMenu
+  @extend .menu
+
+.menuButton
+  +size(34px)
+  display: block
+  +position(absolute, 7px null null span(1 of 20))
+  border: solid 1px $color-tm-border
+  +border-radius(5px)
+  background: $color-tm-background
+  +background-image(linear-gradient(to bottom, $gradient-tm-top, $gradient-tm-bottom 90%))
+  +box-shadow($color-box-shadow-tm 1px 1px 1px, $color-box-shadow-tm-inset-one 0 1px inset, $color-box-shadow-tm-inset-two 0 0 3px inset)
+
+
+  .iconMenu
+    +use-sprite(icon-menu)
+    display: block
+    +size(21px 15px)
+    margin-top: 10px
+    margin-left: 7px
+
+.logo
+  +size(null 51px)
+
+  .bottomLine
+    +size(100% 1px)
+    background-color: $color-line-header
+    +box-shadow($color-border-header 0 -1px 0)
+    +position(absolute, null)
+
+.legend
+  +margin-trailer(2)
+  +margin-leader(1)
+  @extend %margin-left-right
+  color: $color-fonts-legend
+
+.region
+  @extend %formSection
+
+  .containerRegion
+    background-color: $color-background-container-region
+    height: 204px
+    +margin-leader(2)
+    +padding-leader(0.5)
+    border: 1px solid $color-border-container-region
+    +box-shadow($color-box-shadow-container-region 24px 115px 15px -109px  inset, $color-box-shadow-container-region 24px -115px 15px -109px  inset)
+    overflow-y: scroll
+    +adjust-leading-to(1.33)
+
+    .collapsed .icon
+      +position(absolute, 1px null null -16px)
+      +size(12px 13px)
+      +use-sprite(plus-region)
+
+    .expanded .icon
+      +position(absolute, 1px null null -16px)
+      +size(12px 13px)
+      +use-sprite(minus-region)
+
+    .nameBigRegion
+      border-bottom: 1px dashed #000000
+      margin-left: 20px
+      position: relative
+      cursor: pointer
+
+    .nameMiddleRegion
+      @extend .nameBigRegion
+
+    .nameSmallRegion
+      @extend .nameBigRegion
+
+    .ulBigRegion
+      margin-left: 40px
+      display: none
+
+      .ulMiddleRegion
+        @extend .ulBigRegion
+
+        .ulSmallRegion
+          @extend .ulBigRegion
+
+    .checkbox
+      +size(15px)
+      padding: 0 0 0 4px
+      margin-left: 2px
+      margin-top: 2px
+      display: block
+      clear: left
+      float: left
+      background: url('../image/sprite/check-region.png') no-repeat
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+        background: url('../image/sprite/check-region-retina.png') no-repeat
+        background-size: 15px
+
+  .buttonDelete
+    @extend %buttonDelete
+    +position(absolute, 5px 0 null null)
+
+.status
+  @extend %formSection
+
+  .wrapSelect
+    @extend %wrapSelect
+
+    .statusSelect
+      @extend %select
+
+  .buttonDelete
+    @extend %buttonDelete
+    +position(absolute, 5px 0 null null)
+
+.type
+  @extend %formSection
+
+  div.tagsinput
+    max-width: 100%
+    border: 1px solid $color-border-container-type
+    +box-shadow($color-box-shadow-container-region 24px 115px 10px -109px  inset)
+    padding: 6px 5px 0
+
+    input
+      font-size: 87.5%
+
+
+    span.tag
+      padding: 0 5px
+      margin: 0 0 5px 5px
+      border: 1px solid $color-border-container-type
+      background-color: $color-background-form-type
+      color: $color-fonts-body
+
+      a
+        color: $color-fonts-legend
+        font-weight: bold
+
+    #tags_addTag
+      margin-bottom: 4px
+      height: 20px
+      padding-top: 2px
+      margin-left: 5px
+
+      #tags_tag
+        padding: 0
+        margin: 0
+
+  .buttonDelete
+    @extend %buttonDelete
+    +position(absolute, 5px 0 null null)
+
+.option
+  @extend %formSection
+  +legacy-pie-clearfix
+
+  h4
+    margin-bottom: 9px
+
+  .wrapHeight
+    height: 35px
+
+  .wrapOption
+    @extend %wrapSelect
+    +position(absolute, 42px null null null)
+    z-index: 2
+
+    .selectOption
+      @extend %select
+
+  .wrapValue
+    +position(absolute, 34px null null null)
+    z-index: 1
+    padding-left: 152px
+    width: 100%
+    +box-sizing(border-box)
+    
+    input
+      width: 100%
+      border: 1px solid $color-border-container-type
+      +box-shadow($color-box-shadow-container-region 24px 115px 10px -109px  inset)
+      padding: 9px 5px
+      +box-sizing(border-box)
+      +border-radius(0)
+
+  .buttonDelete
+    @extend %buttonDelete
+    +position(absolute, 5px 0 null null)
+
+.divHelp
+  @extend %margin-left-right
+  +margin-trailer(2)
+
+.buttons
+  @extend %margin-left-right
+  +margin-trailer(2)
+
+  .button
+    padding: 10px 10px 10px 33px
+    border: 1px dotted $color-fonts-links
+    background-color: $color-button
+    color: $color-fonts-links
+    cursor: pointer
+    +border-radius(5px)
+    margin-right: 7px
+    margin-bottom: 7px
+    display: inline-block
+    position: relative
+
+    &:hover
+      background-color: $color-button-hover
+
+  .iconRegion
+    +use-sprite(region)
+    +position(absolute, 10px null null 7px)
+
+  .iconStatus
+    +use-sprite(status)
+    +position(absolute, 10px null null 7px)
+
+  .iconType
+    +use-sprite(type)
+    +position(absolute, 10px null null 7px)
+
+  .iconOption
+    +use-sprite(option)
+    +position(absolute, 10px null null 7px)
+
+.links
+  +margin-trailer(1)
+
+  a
+    color: $color-fonts-links
+
+.copyright
+  color: $color-fonts-copyright

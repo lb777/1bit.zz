@@ -1,0 +1,31 @@
+html, input, textarea
+  font-family: helvetica
+
+h1
+  +adjust-font-size-to(1.777rem)
+  font-weight: bold
+  +margin-trailer(1)
+
+h4
+  +adjust-font-size-to(1.2rem)
+  font-weight: normal
+
+strong
+  font-weight: bold
+
+form
+  border-bottom: 1px dashed $color-line-form
+  +margin-trailer(2)
+
+input
+  &::-webkit-input-placeholder
+    color: #000
+
+  &::-moz-placeholder
+    color: #000
+
+  &:-moz-placeholder
+    color: #000
+
+  &:-ms-input-placeholder
+    color: #000

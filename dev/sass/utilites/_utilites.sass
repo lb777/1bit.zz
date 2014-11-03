@@ -1,0 +1,55 @@
+$color-fonts-blue: #3472da
+$color-fonts-black: black
+
+$color-fonts-body: $color-fonts-black
+$color-fonts-legend: lighten($color-fonts-black, 72%)
+$color-fonts-help: lighten($color-fonts-black, 48%)
+$color-fonts-menu: lighten($color-fonts-black, 91.5%)
+$color-fonts-menu-choose: lighten($color-fonts-black, 100%)
+$color-fonts-links: $color-fonts-blue
+$color-fonts-copyright: lighten($color-fonts-black, 48%)
+
+$color-background-header: #656565
+$color-background-body: #ffffff
+$color-background-form: #fff7dc
+$color-background-container-region: #ffffff
+$color-background-form-type: #f4f4f4
+
+$color-button: $color-background-form
+$color-button-hover: lighten($color-background-form, 4%)
+
+//button top menu
+$color-tm-background: #818181
+$color-tm-border: #606060
+$gradient-tm-top: #9d9d9d
+$gradient-tm-bottom: #787878
+$color-box-shadow-tm: rgb(81, 81, 81)
+$color-box-shadow-tm-inset-one: rgba(255,255,255,.1)
+$color-box-shadow-tm-inset-two: rgba(255,255,255,.5)
+$color-box-shadow-container-region: rgba(105, 105, 105, 0.1)
+
+
+$color-line-form: darken(grayscale($color-background-form), 36.8%)
+$color-line-header: lighten($color-background-header, 6.5%)
+
+$color-border-header: rgba(lighten($color-line-header, 50%), .5)
+$color-border-container-region: darken(grayscale($color-background-form), 36.8%)
+$color-border-container-type: darken(grayscale($color-background-form), 36.8%)
+
+$color-span-background-header: #fed44c
+$color-span-fonts-header: #565656
+
+//правый и левый отсуп сайта
+%padding-left-right
+  padding-left: span(1 of 20)
+  padding-right: span(1 of 20)
+  +breakpoint(768px)
+    padding-left: span(1 of 26)
+    padding-right: span(1 of 26)
+
+%margin-left-right
+  margin-left: span(1 of 20)
+  margin-right: span(1 of 20)
+  +breakpoint(768px)
+    margin-left: span(1 of 26)
+    margin-right: span(1 of 26)
