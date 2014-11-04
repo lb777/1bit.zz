@@ -1,0 +1,145 @@
+.wrapHeader
+  @extend %margin-left-right
+
++susy-breakpoint(768px, 26)
+  #header
+    text-align: left
+
+    .wrapHeader
+      +legacy-pie-clearfix
+
+      .menuButton
+        display: none
+
+      .logo
+        float: left
+
+      .menu
+        float: left
+        margin-left: span(1)
+        +margin-leader(0.8)
+        display: inline-block
+
+        a
+          color: $color-fonts-menu
+          text-decoration: none
+          margin-right: 3px
+          border-bottom: 1px solid darken($color-fonts-menu, 20%)
+
+        span
+          display: inline-block
+          padding: 4px
+          background-color: $color-background-top-menu-span
+          +border-radius(5px)
+          font-weight: bold
+          color: darken($color-fonts-menu, 60%)
+
+      .chooseMenu
+        display: inline-block
+        margin-left: span(1)
+        +margin-leader(0.6)
+        float: left
+        color: $color-fonts-menu-choose
+        padding: 8px 8px
+        background-color: #5a5a5a
+        +border-radius(10px)
+        +box-shadow($color-box-shadow-mc 0 1px 1px, $color-box-shadow-mc-inset-one 0 1px 2px inset, $color-box-shadow-mc-inset-two 0 0 3px inset)
+
+  #mainForm
+    .region
+      +legacy-pie-clearfix
+
+      h4
+        float: left
+        display: block
+        +span(5.4)
+
+      .helpForm
+        +position(absolute, 10px 0 null null)
+        +span(4.8)
+
+      .containerRegion
+        float: left
+        +margin-leader(0)
+        +span(12.6)
+
+      .buttonDelete
+        right: span(6.65)
+
+    .status
+      +legacy-pie-clearfix
+
+      h4
+        float: left
+        display: block
+        +span(5.4)
+
+      .wrapSelect
+        float: left
+
+      .buttonDelete
+        right: span(6.65)
+
+    .type
+      +legacy-pie-clearfix
+
+      h4
+        float: left
+        display: block
+        +span(5.4)
+
+      .divType
+        float: left
+        +span(12.75)
+        padding: 0 !important
+
+      .buttonDelete
+        right: span(6.65)
+
+    .option
+      +legacy-pie-clearfix
+
+      h4
+        float: left
+        display: block
+        +span(5.4)
+
+      .wrapHeight
+        float: left
+        +span(12.6)
+        padding: 0 !important
+
+        .wrapOption
+          top: 8px
+
+        .wrapValue
+          top: 0
+          +span(12.85)
+          padding-left: 152px
+
+      .buttonDelete
+        right: span(6.65)
+
+    .buttons
+      min-height: 46px
+
+    .divHelp
+      position: relative
+
+      .helpForm
+        +position(absolute, 0 0 null null)
+        +span(4.8)
+        font-style: normal
+
+  #footer
+    +legacy-pie-clearfix
+    +margin-trailer(0)
+
+    .links
+      float: right
+
+      li
+        display: inline
+        margin-left: 20px
+
+

@@ -1,7 +1,7 @@
 @import "susy";
 @import "breakpoint";
 
-//@include border-box-sizing;
+//Для того, что бы посмотреть сетку раскомментируй блок debug
 
 $susy: (
   columns: 20,
@@ -11,7 +11,12 @@ $susy: (
   gutter-position: inside,
   global-box-sizing: border-box,
   use-custom: (rem: true),
-
+//        debug: (
+//                image: show,
+//                color: rgba(#66f, .25),
+//                output: background,
+//                toggle: top right,
+//        ),
 );
 
 
